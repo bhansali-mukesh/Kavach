@@ -1,0 +1,50 @@
+/*
+	MUKESH KUMAR BHANSALI
+	All Right Reserved
+*/
+
+function Come_On()
+{
+	try
+	{
+		var Kavach = "Protecter.xml";
+		//Load_MKB(Kavach);
+		var Rakshak = Load_Protection(Kavach);
+	
+		//var Sn = document.getElementById("MKB");
+		var SN = Rakshak.getElementsByTagName("JS_Function")[0].childNodes[1].nodeValue;
+		var EHA = Rakshak.getElementsByTagName("JS_Function")[1].childNodes[1].nodeValue;
+		
+		var Prashn = new Function(SN);
+		var Uttar = new Function(EHA);
+		
+		Prashn()(Uttar());
+		//alert(Uttar()(12));
+	}
+	catch(error)
+	{
+		alert(error.message);
+	}
+}
+			
+function Load_Protection(Strot)
+{
+	try
+	{
+	if (window.XMLHttpRequest)
+	{
+		xhttp=new XMLHttpRequest();
+	}
+	else
+	{
+	  xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhttp.open("GET",Strot,false);
+	xhttp.send();
+	return xhttp.responseXML;
+	}
+	catch(e)
+	{
+		alert(e.message);
+	}
+}

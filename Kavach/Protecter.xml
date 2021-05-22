@@ -1,0 +1,71 @@
+<JS>
+		<JS_Function>
+		<![CDATA[
+		return function Protect(Tilism)
+			{
+				var SAMAY_SEEMA = 20000;
+				var Avaeen = parseInt(Math.random() * 100);
+				document.getElementById("Tilismi_Alfaz").innerHTML = '<font color="SILVER">' + Avaeen + '</font>';
+				
+				var Start = new Date();
+
+				var Ali_Baba = prompt("Ma Kore ?");
+			
+				var Stop = new Date();
+				
+				var Process_Time = Stop - Start;
+			
+				var Tilismi_Lafz = Tilism(Avaeen);
+				
+				Tilismi_Lafz = parseFloat(Tilismi_Lafz);
+				Ali_Baba = parseFloat(Ali_Baba);
+				
+				//alert(Process_Time);
+				document.getElementById("Tilismi_Alfaz").innerHTML = "";
+
+				var Proteced_Element = document.getElementById("Protected");
+				var Message = "";
+				
+				if( Ali_Baba == Tilismi_Lafz )
+				{
+					if( Process_Time < SAMAY_SEEMA )
+						Message = '<h3> <font color="#22AA33" >WELCOME GENIOUS. <BR></BR> CORRECT PASSWORD AND IN TIME.</font></h3>';
+					else
+						Message = '<h3> <font color="#2299AA" >GOOD ATTEMPT BUT NOT IN TIME. </font></h3>';
+				}
+				else
+				{
+					Message = '<h3> <font color="#AA2233" >NOT RIGHT<BR></BR> THE RIGHT PASSWORD IS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + Tilismi_Lafz + '</font></h3>';
+				}				
+				
+				Proteced_Element.innerHTML = Message;
+				
+				document.getElementById("LINKS").style.display="";
+			}
+		
+]]>	
+
+	</JS_Function>
+		
+			<JS_Function>
+		<![CDATA[	
+			return function Tilism(Aakaka)
+			{
+				var Talimimi = Aakaka * Aakaka;
+				var Mohtazi = 10 - ( Talimimi % 10 );
+				
+				if(Mohtazi != 10)
+					Talimimi += Mohtazi;
+				
+				var Karm = Talimimi / 10;
+				var Kismat = Karm * .1;
+				
+				var Prasad = Karm + Kismat;
+				Prasad = Prasad.toFixed(1);
+				
+				return Prasad;
+			}
+		]]>	
+
+	</JS_Function>
+</JS>
